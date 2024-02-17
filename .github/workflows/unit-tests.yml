@@ -67,4 +67,4 @@ jobs:
         run: composer test:types
 
       - name: Run Pest Tests
-        run: composer test:unit tests/Unit
+        run: composer test:unit
