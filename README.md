@@ -3,4 +3,4 @@
 <br><b>Laravel Package Skeleton</b>
 </p>
 
-Creating Laravel packages made it easy! You can start building your own modular, organized package quickly and effortlessly.
+Creating Laravel packages made it easy! You can start building your own modular, organized package effortlessly.
