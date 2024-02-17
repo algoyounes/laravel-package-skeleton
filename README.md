@@ -3,4 +3,4 @@
 <br><b>Laravel Package Skeleton</b>
 </p>
 
-Creating Laravel packages made it easy! This skeleton provides a streamlined foundation for developing your own Laravel packages. Simply clone this repository and start building your modular, organized package effortlessly.
+Creating Laravel packages made it easy! You can start building your own modular, organized package quickly and effortlessly.
