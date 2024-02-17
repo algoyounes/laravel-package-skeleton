@@ -1,0 +1,55 @@
+{
+    "name": "algoyounes/php-package-skeleton",
+    "description": "A PHP Laravel skeleton package.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Younes ENHARI",
+            "email": "algoyounes@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AlgoYounes\\Skeleton\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "suggest": {
+        "illuminate/support": "for the Laravel integration",
+        "illuminate/contracts": "for the Laravel integration"
+    },
+    "require-dev": {
+        "laravel/framework": ">=9.0",
+        "pestphp/pest": "^1",
+        "phpstan/phpstan": "^1.10",
+        "rector/rector": "^1.0"
+    },
+    "scripts": {
+        "refactor": "rector",
+        "test:refactor": "rector --dry-run",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:refactor",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

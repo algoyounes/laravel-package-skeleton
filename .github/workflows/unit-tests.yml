@@ -1,0 +1,70 @@
+name: Unit Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [ 8.0, 8.1 ]
+        dependency-version: [ prefer-stable ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Cache PHP setup 
+      - name: Cache PHP
+        id: cache-php
+        uses: actions/cache@v2
+        with:
+          path: ${{ runner.tool_cache }}/php
+          key: ${{ runner.os }}-php-${{ matrix.php }}
+
+      - name: Set PHP Path
+        if: steps.cache-php.outputs.cache-hit == 'true'
+        run: echo "${{ runner.tool_cache }}/php" >> $GITHUB_PATH
+
+      - name: Setup PHP
+        if: steps.cache-php.outputs.cache-hit != 'true'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: json
+          tools: composer:v2
+          coverage: none
+
+      # Cache Composer Dependencies
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.composer/cache/files
+            ~/.composer/cache/repo
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run Rector (Dry Run)
+        run: composer test:refactor
+
+      - name: Run PHPStan
+        run: composer test:types
+
+      - name: Run Pest Tests
+        run: composer test:unit
