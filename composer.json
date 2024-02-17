@@ -1,6 +1,6 @@
 {
-    "name": "algoyounes/php-package-skeleton",
-    "description": "A PHP Laravel skeleton package.",
+    "name": "algoyounes/laravel-package-skeleton",
+    "description": "Laravel Package Skeleton for streamlined package development",
     "type": "library",
     "license": "MIT",
     "authors": [
