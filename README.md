@@ -20,7 +20,7 @@ composer global require algoyounes/laravel-package-skeleton
 
 Once installed, you can use the following commands to streamline your package development process:
 
-**⚡️ Create your package using Composer :**
+**⚡️ Create your package using composer :**
 ```
 composer create-project algoyounes/laravel-package-skeleton --prefer-source YourPackageName
 ```
