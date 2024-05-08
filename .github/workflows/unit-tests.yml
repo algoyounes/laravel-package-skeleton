@@ -14,14 +14,14 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [ 8.2 ]
-        dependency-version: [ prefer-stable ]
+        php: [8.2]
+        dependency-version: [prefer-stable]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Cache PHP setup 
+      # Cache PHP setup
       - name: Cache PHP
         id: cache-php
         uses: actions/cache@v2
@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-php-${{ matrix.php }}
 
       - name: Set PHP Path
-        if: steps.cache-php.outputs.cache-hit == 'true'
+        if: steps.cache-php.outputs.cache-hit != 'true'
         run: echo "${{ runner.tool_cache }}/php" >> $GITHUB_PATH
 
       - name: Setup PHP
@@ -43,25 +43,21 @@ jobs:
           coverage: none
 
       # Cache Composer Dependencies
-      - name: Get Composer Cache Directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
       - name: Cache Composer dependencies
         uses: actions/cache@v2
         with:
-          path: |
-            ~/.composer/cache/files
-            ~/.composer/cache/repo
+          path: ~/.composer/cache/files
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
+          restore-keys: ${{ runner.os }}-composer-
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Run Rector (Dry Run)
         run: composer test:refactor
+
+      - name: Run Lint Tests
+        run: composer test:lint
 
       - name: Run PHPStan
         run: composer test:types
