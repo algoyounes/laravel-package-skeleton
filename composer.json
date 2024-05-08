@@ -20,25 +20,28 @@
         }
     },
     "require": {
-        "php": "^8.0"
+        "php": "^8.2"
     },
     "suggest": {
         "illuminate/support": "for the Laravel integration",
         "illuminate/contracts": "for the Laravel integration"
     },
     "require-dev": {
-        "laravel/framework": ">=9.0",
-        "pestphp/pest": "^1",
-        "phpstan/phpstan": "^1.10",
-        "rector/rector": "^1.0"
+        "laravel/framework": "^11.0",
+        "laravel/pint": "^1.13.7",
+        "pestphp/pest": "^2.28.1",
+        "phpstan/phpstan": "^1.10.50",
+        "rector/rector": "^0.18.13"
     },
     "scripts": {
         "refactor": "rector",
         "test:refactor": "rector --dry-run",
         "test:types": "phpstan analyse --ansi",
         "test:unit": "pest --colors=always",
+        "test:lint": "pint --test",
         "test": [
             "@test:refactor",
+            "@test:lint",
             "@test:types",
             "@test:unit"
         ]

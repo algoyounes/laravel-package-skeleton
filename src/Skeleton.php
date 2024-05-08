@@ -2,7 +2,6 @@
 
 namespace AlgoYounes\Skeleton;
 
-class Skeleton
+final class Skeleton
 {
-
 }
