@@ -42,14 +42,6 @@ jobs:
           tools: composer:v2
           coverage: none
 
-      # Cache Composer Dependencies
-      - name: Cache Composer dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.composer/cache/files
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-          restore-keys: ${{ runner.os }}-composer-
-
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
 
