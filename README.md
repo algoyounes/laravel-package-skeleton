@@ -2,6 +2,12 @@
 <img width="150" height="150" src="assets/logo.png" alt="Laravel Package Skeleton Logo"/>
 <br><b>Laravel Package Skeleton</b>
 </p>
+<p align="center">
+<a href="https://github.com/algoyounes/laravel-package-skeleton/actions"><img src="https://github.com/algoyounes/laravel-package-skeleton/actions/workflows/unit-tests.yml/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/dt/algoyounes/laravel-package-skeleton" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/v/algoyounes/laravel-package-skeleton" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/algoyounes/laravel-package-skeleton"><img src="https://img.shields.io/packagist/l/algoyounes/laravel-package-skeleton" alt="License"></a>
+</p>
 
 Creating Laravel packages made it easy! You can start building your own modular, organized package effortlessly.
 
