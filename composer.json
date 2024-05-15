@@ -44,6 +44,18 @@
             "@test:lint",
             "@test:types",
             "@test:unit"
+        ],
+        "hook:install": [
+            "ln -sf $PWD/hooks/pre-commit .git/hooks/pre-commit",
+            "chmod +x .git/hooks/pre-commit",
+            "ln -sf $PWD/hooks/pre-push .git/hooks/pre-push",
+            "chmod +x .git/hooks/pre-push"
+        ],
+        "hook:pre-commit": [
+            "hooks/pre-commit"
+        ],
+        "hook:pre-push": [
+            "hooks/pre-push"
         ]
     },
     "config": {

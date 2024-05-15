@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Source the common functions
+source "$(dirname "$0")/common.sh"
+
+# Run the common exit function on script exit
+trap onExit EXIT
+
+echo "Running lint tests..."
+composer test:lint || { echo "Lint Tests failed"; exit 1; }
+
+# Run PHPStan
+echo "Running PHPStan..."
+composer test:types || { echo "PHPStan failed"; exit 1; }
+
+exit 0;
