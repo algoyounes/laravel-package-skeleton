@@ -45,7 +45,11 @@
             "@test:types",
             "@test:unit"
         ],
-        "hook:install": [
+        "hooks": [
+            "@hook:pre-commit",
+            "@hook:pre-push"
+        ],
+        "hooks:install": [
             "ln -sf $PWD/hooks/pre-commit .git/hooks/pre-commit",
             "chmod +x .git/hooks/pre-commit",
             "ln -sf $PWD/hooks/pre-push .git/hooks/pre-push",
