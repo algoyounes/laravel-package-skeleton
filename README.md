@@ -44,8 +44,8 @@ Running `composer test` will execute the following tasks :
 
 **🔧 Install Git Hooks:**
 ```
-composer hooks:install
+composer hook:install
 ```
-Running `composer hooks` will execute the following tasks :
+Running `composer hook` will execute the following tasks :
 - 🔄 Pre-commit Hook: `composer hook:pre-commit`
 - 🧹 Pre-push Hook: `composer hook:pre-push`
