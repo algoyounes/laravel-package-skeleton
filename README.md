@@ -41,3 +41,11 @@ Running `composer test` will execute the following tasks :
 - 🧹 Linting Tests: `composer test:lint`
 - 🔍 Static Analysis Tests: `composer test:types`
 - 🛠️ Unit Tests: `composer test:unit`
+
+**🔧 Install Git Hooks:**
+```
+composer hooks:install
+```
+Running `composer hooks` will execute the following tasks :
+- 🔄 Pre-commit Hook: `composer hook:pre-commit`
+- 🧹 Pre-push Hook: `composer hook:pre-push`

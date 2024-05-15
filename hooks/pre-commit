@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Source the common functions
+source "$(dirname "$0")/common.sh"
+
+# Run the common exit function on script exit
+trap onExit EXIT
+
+# Identify PHP files that are being committed
+php_files=$(getChangedFiles '\.php$')
+
+# Run Rector on changed PHP files
+if [ -n "$php_files" ]; then
+    echo "Running Rector (Dry Run) on changed PHP files..."
+    rector_output=$(composer test:refactor $php_files)
+    echo "$rector_output"
+
+    if [[ $rector_output == *"error"* ]]; then
+        echo "Rector failed"
+        exit 1
+    fi
+fi
+
+# Run Lint Tests
+echo "Running lint tests..."
+composer test:lint || { echo "Lint Tests failed"; exit 1; }
+
+# Run PHPStan
+echo "Running PHPStan..."
+composer test:types || { echo "PHPStan failed"; exit 1; }
+
+# Run Pest Tests
+echo "Running Pest Tests..."
+composer test:unit || { echo "Pest Tests failed"; exit 1; }
+
+exit 0
