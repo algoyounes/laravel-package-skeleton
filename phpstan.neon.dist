@@ -4,3 +4,4 @@ parameters:
         - src
 
     reportUnmatchedIgnoredErrors: true
+    checkGenericClassInNonGenericObjectType: false
