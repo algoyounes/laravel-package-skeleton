@@ -1,0 +1,8 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "unary_operator_spaces": false,
+        "phpdoc_separation": false,
+        "binary_operator_spaces": false
+    }
+}

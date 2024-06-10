@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace AlgoYounes\Skeleton\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

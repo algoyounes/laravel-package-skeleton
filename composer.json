@@ -16,7 +16,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests"
+            "AlgoYounes\\Skeleton\\Tests\\": "tests"
         }
     },
     "require": {
@@ -30,8 +30,8 @@
         "laravel/framework": "^11.0",
         "laravel/pint": "^1.13.7",
         "pestphp/pest": "^2.28.1",
-        "phpstan/phpstan": "^1.10.50",
-        "rector/rector": "^0.18.13"
+        "phpstan/phpstan": "1.10.56",
+        "rector/rector": "0.19.5"
     },
     "scripts": {
         "refactor": "rector",
@@ -44,6 +44,12 @@
             "@test:lint",
             "@test:types",
             "@test:unit"
+        ],
+        "fix:lint": "pint --preset laravel",
+        "fix:refactor": "rector",
+        "fix": [
+            "@fix:refactor",
+            "@fix:lint"
         ],
         "hook": [
             "@hook:pre-commit",
