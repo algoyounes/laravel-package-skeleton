@@ -49,3 +49,11 @@ composer hook:install
 Running `composer hook` will execute the following tasks :
 - 🔄 Pre-commit Hook: `composer hook:pre-commit`
 - 🧹 Pre-push Hook: `composer hook:pre-push`
+
+**🛠️ Fix code issues:**
+```
+composer fix
+```
+Running `composer fix` will execute the following tasks:
+- ✨ Laravel linting Fixes: `composer fix:lint`
+- 🔄 Refactoring Fixes: `composer fix:refactor`
