@@ -1,6 +1,16 @@
 {
     "name": "algoyounes/laravel-package-skeleton",
     "description": "Laravel Package Skeleton for streamlined package development",
+    "keywords": [
+        "laravel",
+        "package",
+        "skeleton",
+        "skeleton-package",
+        "laravel package",
+        "laravel package skeleton",
+        "package skeleton",
+        "package development"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
