@@ -79,6 +79,9 @@
         ],
         "hook:pre-push": [
             "hooks/pre-push"
+        ],
+        "post-install-cmd": [
+            "@hook:install"
         ]
     },
     "config": {
