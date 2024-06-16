@@ -37,7 +37,7 @@ jobs:
 
       # Cache both the Composer cache directory and the vendor directory
       - name: Cache Composer dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ${{ env.COMPOSER_CACHE_DIR }}
