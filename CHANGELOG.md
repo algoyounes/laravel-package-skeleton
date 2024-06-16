@@ -2,6 +2,10 @@
 
 All notable changes to `laravel package skeleton` will be documented in this file
 
+## v1.2.1 - 2024-06-16
+
+**Full Changelog**: https://github.com/algoyounes/laravel-package-skeleton/compare/v1.2.0...v1.2.1
+
 ## v1.2.0 - 2024-06-16
 
 ### What's Changed
