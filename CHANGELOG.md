@@ -2,6 +2,19 @@
 
 All notable changes to `laravel package skeleton` will be documented in this file
 
+## v1.2.3 - 2024-07-15
+
+### What's Changed
+
+* chore(deps): bump actions/checkout from 3 to 4 by @dependabot in https://github.com/algoyounes/laravel-package-skeleton/pull/9
+* chore(deps): bump actions/cache from 3 to 4 by @dependabot in https://github.com/algoyounes/laravel-package-skeleton/pull/8
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/algoyounes/laravel-package-skeleton/pull/9
+
+**Full Changelog**: https://github.com/algoyounes/laravel-package-skeleton/compare/v1.2.2...v1.2.3
+
 ## v1.2.2 - 2024-06-16
 
 **Full Changelog**: https://github.com/algoyounes/laravel-package-skeleton/compare/v1.2.1...v1.2.2
