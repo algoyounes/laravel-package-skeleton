@@ -3,6 +3,7 @@
     "rules": {
         "unary_operator_spaces": false,
         "phpdoc_separation": false,
-        "binary_operator_spaces": false
+        "binary_operator_spaces": false,
+        "class_attributes_separation": false
     }
 }
