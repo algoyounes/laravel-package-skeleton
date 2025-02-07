@@ -84,8 +84,8 @@ else
   # If a command fails, exit the script
   set -e
 
-  # Push main
-  git push origin main
+  # Push master
+  git push origin master
 
   # If it's not a dry run, let's go!
   # 3) Add git tag
@@ -95,7 +95,7 @@ else
   # 4) Push the new tag
 
   echo "Push the tag"
-  git push --tags origin main
+  git push --tags origin master
 
   echo -e "\e[32mRelease done: $next_version\e[0m"
 fi
