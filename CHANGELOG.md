@@ -2,6 +2,12 @@
 
 All notable changes to `laravel package skeleton` will be documented in this file
 
+## v1.2.10 - 2025-03-25
+
+* refactor(service provider): extract config handling methods
+
+**Full Changelog**: https://github.com/algoyounes/laravel-package-skeleton/compare/v1.2.9...v1.2.10
+
 ## v1.2.7 - 2025-02-17
 
 **Full Changelog**: https://github.com/algoyounes/laravel-package-skeleton/compare/v1.2.6...v1.2.7
