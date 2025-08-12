@@ -20,7 +20,7 @@ jobs:
     steps:
       # Check out the repository code
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Set up the desired PHP version with extensions and coverage
       - name: Setup PHP
